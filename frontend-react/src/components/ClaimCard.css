@@ -1,0 +1,218 @@
+.claim-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem 2rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.claim-card:hover {
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.claim-card.verified {
+  border-left: 3px solid var(--success);
+}
+
+.claim-card.hallucination {
+  border-left: 3px solid var(--error);
+}
+
+.claim-card.suspicious {
+  border-left: 3px solid var(--warning);
+}
+
+.claim-card.opinion {
+  border-left: 3px solid var(--accent);
+}
+
+.claim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.claim-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.claim-status {
+  padding: 0.4rem 1rem;
+  border: 1px solid;
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.claim-status.verified {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.claim-status.hallucination {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.claim-status.suspicious {
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.claim-status.opinion {
+  color: var(--text-muted);
+  border-color: var(--text-muted);
+}
+
+.status-icon {
+  font-weight: 700;
+}
+
+.claim-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  font-style: italic;
+}
+
+.claim-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row.correction {
+  background: rgba(5, 150, 105, 0.08);
+  padding: 1rem;
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  margin-top: 0.5rem;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: var(--text-muted);
+  min-width: 100px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-value {
+  color: var(--text-secondary);
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.source-link {
+  color: var(--accent);
+  text-decoration: none;
+  word-break: break-all;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+.confidence-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.confidence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.confidence-label {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.confidence-percentage {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.confidence-bar-track {
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.confidence-bar-fill {
+  height: 100%;
+  transition: width 0.6s ease;
+}
+
+.confidence-bar-fill.verified {
+  background: var(--success);
+}
+
+.confidence-bar-fill.hallucination {
+  background: var(--error);
+}
+
+.confidence-bar-fill.suspicious {
+  background: var(--warning);
+}
+
+.confidence-bar-fill.opinion {
+  background: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .claim-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .detail-label {
+    min-width: auto;
+  }
+
+  .claim-card {
+    padding: 1.25rem;
+  }
+}

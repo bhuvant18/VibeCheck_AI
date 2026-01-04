@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv
+.venv
+env
+.env.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Build outputs
+dist
+build
+*.egg-info
+
+# Docker
+Dockerfile*
+docker-compose*
+.docker
+
+# Docs
+*.md
+docs/
+
+# Tests
+tests/
+__tests__
+*.test.js
+*.spec.js

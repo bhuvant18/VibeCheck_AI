@@ -1,0 +1,20 @@
+# VibeCheck Backend Dependencies
+
+# Google Gen AI SDK (for Gemini 2.0)
+google-genai>=1.0.0
+
+# FastAPI Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Data Validation
+pydantic>=2.5.0
+
+# HTTP Client for Semantic Scholar
+requests>=2.31.0
+
+# Async support
+httpx>=0.26.0
+
+# Environment variables
+python-dotenv>=1.0.0

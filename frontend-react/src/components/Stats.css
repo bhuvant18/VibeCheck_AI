@@ -1,0 +1,66 @@
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-bottom: 2rem;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: var(--bg-tertiary);
+}
+
+.stat-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.stat-card.verified .stat-icon { color: var(--success); }
+.stat-card.hallucination .stat-icon { color: var(--error); }
+.stat-card.suspicious .stat-icon { color: var(--warning); }
+.stat-card.accuracy .stat-icon { color: var(--accent); }
+
+.stat-content {
+  text-align: center;
+}
+
+.stat-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,154 @@
+.text-input-container {
+  background: var(--bg-tertiary);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text-input-container:hover {
+  border-color: var(--border);
+  background: var(--bg-tertiary);
+}
+
+.text-input-container:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.input-label {
+  display: none;
+}
+
+.text-input {
+  width: 100%;
+  background: transparent;
+  color: var(--text-primary);
+  border: none;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  resize: none;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.text-input::placeholder {
+  color: var(--text-muted);
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.text-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.clear-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.clear-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: var(--border);
+}
+
+.clear-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.clear-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.audit-btn {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.audit-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.audit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.audit-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.audit-btn .loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .text-input-container {
+    padding: 0.4rem 0.6rem 0.4rem 0.75rem;
+    border-radius: 24px;
+  }
+  
+  .text-input {
+    font-size: 0.95rem;
+  }
+  
+  .audit-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

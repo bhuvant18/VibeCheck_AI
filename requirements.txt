@@ -1,0 +1,23 @@
+# VibeCheck - Full Application Dependencies
+
+# ========== Core AI ==========
+# Google Gen AI SDK (for Gemini 2.0 with Search Grounding)
+google-genai>=1.0.0
+
+# ========== Backend ==========
+# FastAPI Framework
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Data Validation
+pydantic>=2.5.0
+
+
+
+# ========== Shared ==========
+# HTTP Client for APIs
+requests>=2.31.0
+httpx>=0.26.0
+
+# Environment variables
+python-dotenv>=1.0.0
