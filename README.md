@@ -7,6 +7,7 @@ Generative AI systems frequently produce confident yet factually incorrect conte
 **Project Name:** FactCheck AI - AI Hallucination Check  
 **Team Name:** Beatrix Kiddo  
 **PPT Link:** [View Presentation](https://drive.google.com/drive/folders/1R828wnpcfe0HLdnatcAFNfGugjtrW16E?usp=drive_link)
+
 **Video Link:**[view Demo](https://drive.google.com/drive/folders/1NvrNQsfAsN7CjomcitDPx2O8QcKXCxWR?usp=sharing)
 
 # 🎮 GFGBQ-Team-beatrix-kiddo
@@ -154,6 +155,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Made with ❤️ by Team beatrix-kiddo
 
 </div>
+
 
 
 
