@@ -42,6 +42,52 @@ Our project is built with a modern, versatile technology stack:
 
 ---
 
+## Architecture
+
+```mermaid
+graph LR
+    %% Custom Styling
+    classDef user fill:#E0E7FF,stroke:#6366F1,stroke-width:2px,color:#1E1B4B;
+    classDef ui fill:#818CF8,stroke:#6366F1,stroke-width:2px,color:white;
+    classDef api fill:#34D399,stroke:#059669,stroke-width:2px,color:#064E3B;
+    classDef agent fill:#10B981,stroke:#059669,stroke-width:2px,color:#064E3B;
+    classDef tool fill:#FB923C,stroke:#EA580C,stroke-width:2px,color:#7C2D12;
+    classDef cloud fill:#FBBF24,stroke:#D97706,stroke-width:2px,color:#78350F;
+    classDef report fill:#C4B5FD,stroke:#8B5CF6,stroke-width:2px,color:#2E1065;
+
+    %% Components
+    U((👤 User)):::user
+    FE[🖥️ React Frontend<br/>Vite + Nginx]:::ui
+    API[🚀 FastAPI Server<br/>api.py]:::api
+    AGENT[🤖 VibeCheck Agent<br/>agent.py]:::agent
+    PARSER[🔍 Claim Parser<br/>& Classifier]:::tool
+    URLVAL[🌐 URL Validator<br/>& Content Fetcher]:::tool
+    CITE[📚 Citation Checker<br/>Semantic Scholar]:::tool
+    GEMINI[✨ Google Gemini<br/>2.5 Flash]:::cloud
+    GSEARCH[🔎 Google Search<br/>Grounding]:::cloud
+    SCHOLAR[📖 Semantic Scholar API]:::cloud
+    WEB[🕸️ Web URLs]:::cloud
+    REPORT[(📄 Verification Report<br/>JSON Response)]:::report
+
+    %% Data Flow
+    U -- "Paste AI text" --> FE
+    FE -- "POST /api/verify" --> API
+    API -- "verify_content()" --> AGENT
+    AGENT -- "Break into claims" --> PARSER
+    AGENT -- "Pre-check URLs" --> URLVAL
+    AGENT -- "verify_paper_tool()" --> CITE
+    AGENT -- "Structured analysis" --> GEMINI
+    GEMINI -- "Fact grounding" --> GSEARCH
+    CITE -- "Paper lookup" --> SCHOLAR
+    URLVAL -- "HEAD/GET requests" --> WEB
+    AGENT -- "VERIFIED / HALLUCINATION / SUSPICIOUS / BROKEN_URL" --> REPORT
+    REPORT --> API
+    API -- "VerificationReport" --> FE
+    FE -- "Color-coded results + corrections" --> U
+```
+
+---
+
 ## ✨ Key Features
 
 - 🚀 **Fast & Efficient** - Optimized Python backend for performance
